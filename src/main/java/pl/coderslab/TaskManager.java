@@ -42,7 +42,7 @@ public class TaskManager {
                     System.out.println("Task deleted.");
                     break;
                 case "list":
-                    printTab(tasks);
+                    printList(tasks);
                     break;
                 case "exit":
                     saveToFile(fileName, tasks);
@@ -101,7 +101,7 @@ public class TaskManager {
         }
     }
 
-    public static void printTab(String[][] tab) {
+    public static void printList(String[][] tab) {
         for (int i = 0; i < tab.length; i++) {
             System.out.print(i + " : ");
             for (int j = 0; j < tab[i].length; j++) {
