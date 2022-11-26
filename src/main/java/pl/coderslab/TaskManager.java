@@ -19,8 +19,8 @@ public class TaskManager {
     static String[][] tasks;
 
     public static void printOptions(String[] table) {
-        System.out.println(ConsoleColors.BLUE);
-        System.out.println("Please select an option: " + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN);
+        System.out.println("Please select an option: " + ConsoleColors.RED);
         for (String option : table) {
             System.out.println(option);
         }
@@ -34,11 +34,6 @@ public class TaskManager {
             String input = scanner.nextLine();
 
             switch (input) {
-                case "exit":
-                    saveToFile(fileName, tasks);
-                    System.out.println(ConsoleColors.RED + "Bye, bye.");
-                    System.exit(0);
-                    break;
                 case "add":
                     addTask();
                     break;
@@ -48,6 +43,11 @@ public class TaskManager {
                     break;
                 case "list":
                     printTab(tasks);
+                    break;
+                case "exit":
+                    saveToFile(fileName, tasks);
+                    System.out.println(ConsoleColors.RED + "Bye, bye.");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Please select a correct option.");
